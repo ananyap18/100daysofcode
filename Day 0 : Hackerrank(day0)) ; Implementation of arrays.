@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a[] = { 10, 20, 30, 40, 50};
+    int size = 5;
+    int i, j, pos, x, y;
+    
+    cout<<"Enter the element you want to find:";
+    cin>> y;
+    while(i<size)
+    {
+        if(a[i] == y)
+        {
+            break;
+        }
+        i++;
+    }
+    
+    if(i<size)
+    {
+        cout<<"Element "<<y<<" is present at position: "<<i;
+    }
+    else
+    {
+        cout<<"Element is not present in the array";
+    }
+    pos = i+1;
+    cout<<"\nEnter Element to Insert: ";
+    cin>>x;
+    for(i=size; i>=pos; i--)
+        a[i] = a[i-1];
+    a[i] = x;
+    size++;
+    cout<<"\nThe New Array is:\n";
+    for(i=0; i<size; i++)
+        cout<<a[i]<<"  ";
+    cout<<endl;
+    return 0;
+}
+
